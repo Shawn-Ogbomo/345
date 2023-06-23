@@ -1,0 +1,45 @@
+Command Line:
+--------------------------
+  1: ws
+  2: ad1.txt
+  3: ad2.txt
+  4: ad3.txt
+  5: ad4.txt
+--------------------------
+
+--------------------
+All Cars
+--------------------
+    Brand     | Model     | Year |Price w/Tax |Special Price
+1 . Honda     | CRV            | 2015 |    15000.00|    13500.00
+2 . Honda     | CRV            | 2021 |    25000.00|
+3 . Honda     | CRV            | 2020 |    20000.00|
+4 . Acura     | MDX            | 2021 |    45000.00|    40500.00
+5 . Acura     | Type S         | 2021 |    45000.00|    40500.00
+6 . Acura     | Type S         | 2021 |    47000.00|    42300.00
+7 . Toyota    | RAV 4          | 2015 |    16950.00|    16102.50
+8 . Toyota    | RAV 4          | 2021 |    28250.00|
+9 . Toyota    | RAV 4          | 2022 |    33900.00|    32205.00
+10. Lexus     | MDX            | 2021 |    50850.00|    48307.50
+11. Lexus     | RX 350         | 2021 |    50850.00|    48307.50
+12. Lexus     | RX 350         | 2021 |    67800.00|
+13. Lexus     | NX 300         | 2021 |    79100.00|
+14. Lexus     | NX 300         | 2021 |    80230.00|    76218.50
+Cannot open file [ad3.txt]. Ignoring it!
+Cannot open file [ad4.txt]. Ignoring it!
+--------------------
+New Cars
+--------------------
+    Brand     | Model     | Year |Price w/Tax |Special Price
+1 . Honda     | CRV            | 2021 |    28250.00|
+2 . Acura     | MDX            | 2021 |    50850.00|    48307.50
+3 . Acura     | Type S         | 2021 |    50850.00|    48307.50
+4 . Acura     | Type S         | 2021 |    53110.00|    50454.50
+5 . Toyota    | RAV 4          | 2021 |    28250.00|
+6 . Toyota    | RAV 4          | 2022 |    33900.00|    32205.00
+7 . Lexus     | MDX            | 2021 |    50850.00|    48307.50
+8 . Lexus     | RX 350         | 2021 |    50850.00|    48307.50
+9 . Lexus     | RX 350         | 2021 |    67800.00|
+10. Lexus     | NX 300         | 2021 |    79100.00|
+11. Lexus     | NX 300         | 2021 |    80230.00|    76218.50
+--------------------

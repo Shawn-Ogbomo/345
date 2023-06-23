@@ -1,0 +1,66 @@
+Command Line:
+--------------------------
+  1: ws
+--------------------------
+
+******************************************************
+* Testing the Queue of Integers                      *
+******************************************************
+Queue size: [7]
+----------------------
+| Dictionary Content |
+----------------------
+22
+1
+455
+90
+455
+6
+43
+----------------------
+Item [0]: 22
+Item [5]: 6
+Item [9]: 0
+******************************************************
+
+******************************************************
+* Testing the Queue of Floats                        *
+******************************************************
+Queue size: [6]
+----------------------
+| Dictionary Content |
+----------------------
+34.556
+3333.33
+122.55
+3333.33
+678.54
+3333.34
+----------------------
+Item [0]: 34.556
+Item [5]: 3333.34
+Item [9]: 0
+******************************************************
+
+******************************************************
+* Testing the Queue of Dictionary Objects            *
+******************************************************
+Queue size: [9]
+----------------------
+| Dictionary Content |
+----------------------
+                dome: a rounded vault forming the roof of a building or structure.
+           pollution: An introduction into the environment of a substance that has harmful effect
+               slide: a structure with a smooth sloping surface for children to slide down.
+            complete: having all the necessary or appropriate parts
+           pollution: An introduction into the environment of a substance that has harmful effect
+               slide: a structure with a smooth sloping surface for children to slide down.
+            complete: having all the necessary or appropriate parts
+          acceptable: able to be agreed on; suitable
+                dome: a rounded vault forming the roof of a building or structure.
+----------------------
+Item [0]: [dome][a rounded vault forming the roof of a building or structure.]
+Item [8]: [dome][a rounded vault forming the roof of a building or structure.]
+Item [9]: [][]
+******************************************************
+
