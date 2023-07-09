@@ -1,1 +1,45 @@
-This is a tests...
+/* -----------------------------------------------------
+Workshop 7
+Filename: reflect.txt
+Name: Shawn Ogbomo
+Student Number: 022609127
+Reflect.txt
+-------------------------------------------------------
+Date 07.07.2023
+---------------------------------------------------
+
+Completing workshop 7 improved my understanding of the standard template library STL. 
+
+The STL contains manifold functions that operate on particular types; these functions are compatible with the algorithms library to produce solutions to common tasks. 
+
+For instance, if the task is to count the number of even numbers in a vector, the function count_if would suffice instead of using manual iteration to traverse the vector and a selection statement to determine if the number at the index is even. 
+
+Solving problems manually when the standard library already provides the solution usually results in errors. 
+
+Namely, off by one errors, and it is best to allow the algorithms library to handle such things. 
+
+Completing the workshop was a seamless task. However, learning how to implement the transform algorithm was arduous. 
+
+Occasionally, the official documentation became very technical and resulted in a misunderstanding of the provided examples. 
+
+The functions used to complete the workshop are: transform, sort, for_each, any_of, and copy_if. 
+
+I utilized transform to remove the names of the crimes that contained the string none. 
+
+The transform function suffices here since it can alter the contents of the information in place supplied to the function. 
+
+Also, I utilized the sort algorithm to sort the crimes via province, crime, cases, and resolved. 
+
+The sort function is adequate in this situation since it can reorder the contents in any way specified; since the sort algorithm exists, there is no need to traverse the vector of crimes manually and use selection to evaluate the member variable against the target string(option).
+
+Moreover, I used the for_each algorithm to display each crime in the vector to calculate the total of cases resolved and the total number of cases. 
+
+Previously, I used the accumulate algorithm twice to calculate the total number of crimes and the total number of resolved crimes. However, such a method is staggeringly inefficient because two additional iteration statements were added to the function thus increasing its execution time.
+
+It is ideal to do all the calculations within the for_each since the same vector contains all the necessary information. 
+
+The any_of algorithm determined if a crime with an offence matching the target string existed. Any_of is efficient since it traverses the container from beginning to end, returning true if there is an occurrence and stopping the iteration thereafter.
+
+Lastly, the copy_if algorithm copied all the contents from the original vector into a new vector where the province matched the target string. 
+
+Copy_if is best suitable for such a situation because the original contents of the vector need to remain the same. 
