@@ -5,7 +5,7 @@ Name: Shawn Ogbomo
 Student Number: 022609127
 Reflect.txt
 -------------------------------------------------------
-Date 07.07.2023
+Date 07.10.2023
 ---------------------------------------------------
 
 Completing workshop 7 improved my understanding of the standard template library STL. 
@@ -38,8 +38,74 @@ Previously, I used the accumulate algorithm twice to calculate the total number 
 
 It is ideal to do all the calculations within the for_each since the same vector contains all the necessary information. 
 
-The any_of algorithm determined if a crime with an offence matching the target string existed. Any_of is efficient since it traverses the container from beginning to end, returning true if there is an occurrence and stopping the iteration thereafter.
+The any_of algorithm determined if a crime with an offence matching the target string existed. 
 
-Lastly, the copy_if algorithm copied all the contents from the original vector into a new vector where the province matched the target string. 
+Any_of is efficient since it traverses the container from beginning to end, returning true if there is an occurrence and stopping the iteration thereafter.
+
+The copy_if algorithm copied all the contents from the original vector into a new vector where the province matched the target string. 
 
 Copy_if is best suitable for such a situation because the original contents of the vector need to remain the same. 
+
+I would convert the first character in the target string for the sort function to uppercase and each subsequent character to lowercase in the 
+sort function so that the target string does not need to be case sensitive. 
+
+Moreover, to impove the sort function, I would implement selection statements for each option, and call sort in each respective case. 
+
+Implementing the selection statements within the for_each would require less code, 
+
+however, the option would be evaluated constantly for each object in the vector. Therefore, this is redundant.  
+
+To prevent the client from specifing an invalid string I would declare an assertion within the sort function
+
+this way the compiler can determine if the string is invalid and stop the program. 
+
+
+
+//NEW SORT FUNCTION 
+
+void sort(const std::string& option) {
+	const std::map<std::string, int, std::less<>> valid_options = {
+	{"Province",1},{"Crime",2}, {"Cases",3}, {"Resolved",4} };
+
+	//convert the first character of the target string to upper case
+	auto opt = option;
+
+	opt[0] = toupper(opt[0]);
+	//// convert each character from index 1 to lower case
+
+	std::for_each(opt.begin() + 1, opt.end(), [](auto& c) {
+		c = tolower(c);
+		});
+
+	//check if the option exists in the map 
+	auto found = valid_options.find(opt);
+
+	// if the option does not exist 
+		//error 
+	assert(found != std::end(valid_options));
+
+	//rest of sort function
+	if (found->first == "Province") {
+		std::sort(crimes.begin(), crimes.end(), [](const Crime& c_left, const Crime& c_right) {
+			return c_left.province < c_right.province;
+			});
+	}
+
+	else if (found->first == "Crime") {
+		std::sort(crimes.begin(), crimes.end(), [](const Crime& c_left, const Crime& c_right) {
+			return c_left.crime < c_right.crime;
+			});
+	}
+
+	else if ((found->first) == "Cases") {
+		std::sort(crimes.begin(), crimes.end(), [](const Crime& c_left, const Crime& c_right) {
+			return c_left.number_of_cases < c_right.number_of_cases;
+			});
+	}
+
+	else if (found->first == "Resolved") {
+		std::sort(crimes.begin(), crimes.end(), [](const Crime& c_left, const Crime& c_right) {
+			return c_left.m_resolved < c_right.m_resolved;
+			});
+	}
+}
