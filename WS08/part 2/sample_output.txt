@@ -1,0 +1,48 @@
+Command Line: ws NamesSIN.dat CorrectSalary.dat WrongSalary.dat
+
+    SIN No    Employee Name
+ 799273984   Jill
+ 174784181   Mike
+ 524544921   Jack
+ 506745728   Kyle
+ 505968818  Carol
+
+********************************************
+* Correct Salaries with SIN No's
+********************************************
+    SIN No    Salary
+ 506745728  35715.23
+ 505968818  33525.96
+ 174784181  95875.12
+ 524544921  15478.54
+
+********************************************
+* Wrong Salaries with SIN No's
+********************************************
+    SIN No    Salary
+ 506745728  35715.23
+ 505968818  33525.96
+ 174784181  95875.12
+ 524544921 154782.54
+
+********************************************
+* Merging wrong salaries using Raw Pointers
+********************************************
+Ovdrloaded Constructor     [1]
+Copy Constructor           [2] from [1]
+Destructor                 [1]
+Ovdrloaded Constructor     [3]
+Destructor                 [3]
+Destructor                 [2]
+ERROR: *** Employees salaray range is not valid
+
+
+********************************************
+* Merging correct salaries using Raw Pointers
+********************************************
+Employee Name    Salary
+           Mike  95875.12
+           Jack  15478.54
+           Kyle  35715.23
+          Carol  33525.96
+
