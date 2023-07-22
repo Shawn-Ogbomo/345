@@ -58,7 +58,7 @@ namespace sdds {
 				if (emp[i].id == sal[j].id) {
 					if (activeEmp.luhns_algorithm(emp[i].id)) {
 						auto found_employee(std::make_unique<EmployeeWage>(emp[i].name, sal[j].salary));
-						found_employee.get()->rangeValidator();
+						found_employee->rangeValidator();
 						activeEmp += std::move(found_employee);
 					}
 					else {

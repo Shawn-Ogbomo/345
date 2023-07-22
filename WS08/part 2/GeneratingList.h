@@ -67,7 +67,7 @@ namespace sdds {
 		//TODO: Overload the += operator with a smart pointer
 		// as a second operand.
 		void operator+=(std::unique_ptr<T>right) {
-			list.push_back(*right.get());
+			list.push_back(*right);
 		}
 
 		//TODO: Overload the += operator with a raw pointer
