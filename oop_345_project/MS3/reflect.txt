@@ -1,0 +1,41 @@
+//Filename reflet.txt
+//Name:	Shawn Ogbomo
+// Student #022609127
+// date: 07/07/2023
+//----------------------------------------------------------
+
+Completing all three milestones improved my debugging skills, knowledge of smart-pointers, inheritance, internal linkage, and the significance of using assertions in functions. 
+
+Obtaining the correct output for milestone 3 was an arduous task and comprised carefully inspecting the call stack and watch list to identify logic errors. 
+
+I was unaware that the return values for getter functions were traceable in the debug console; tracing the getter functions and current station in the attemptToMoveOrder() was crucial in obtaining the correct output.
+
+In addition, incorrect use of unique pointers resulted in manifold error messages in Valgrind, namely, errors regarding double delete because of ownership issues. 
+
+To resolve the problem, I changed the private member variable m_pNextStation from a unique_pointer to a raw pointer. 
+
+The main program owned the stations object, so there was no reason to manage the object in the m_pNextStation member; doing so would cause a double delete because I was using emplace back to set the corresponding station for the  m_activeLine member in the line manager constructor. 
+
+The m_pNextStation holds a pointer to the stations that were in the parameter list for the line manager function. 
+
+The unique_pointer would have to delete the resource, and then the main program will delete that same resource again. 
+
+On the second delete, the managed resource would not be equal to null_ptr; this would cause an unhandled exception.
+
+Moreover, I did not declare my destructor as virtual in the station.h when the station class contains virtual member functions, and doing this, caused compilation errors. 
+
+Also, I did not use a using-declaration to expose the display function that is in the station.h file that is marked virtual in the workstation.h file; this will cause the object to be hidden and cause errors. 
+
+The program would invoke the incorrect display function.
+
+When I initialized m_cntCustomerOrder with g_pending.size(), it produced erroneous results. 
+
+To resolve the issue, I had to remove the static keyword from each deque of customer orders in the workstation.h header file; this permitted the main program to populate the correct version of the g_pending deque of customer order. 
+
+When a global variable is marked static, it is inaccessible from other translation units; this means that if the g_pending is static global, the main program will not populate the correct version and therefore populate a different one. 
+
+Lastly, I was not including invariants in my functions; this caused unhandled exceptions. 
+
+For example, in the attemptToMoveOrder(), a selection statement was missing to check if the customer orders were empty. 
+
+If empty, the function should do nothing. However, without the check, the attemptToMoveOrder() attempted to move customer orders that did not exist (null_ptr).
